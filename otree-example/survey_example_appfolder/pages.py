@@ -20,7 +20,7 @@ class Welcome(Page):
 
 class DemoPage(Page):
     form_model = Player
-    form_fields = ['age_question', 'gender', 'hidden_input']
+    form_fields = ['number_cats_question', 'color', 'best_cat_name_question']
 
 class Html_overview(Page):
     form_model = Player
@@ -32,5 +32,4 @@ class EndPage(Page):
 #Here we define in which ordering we want the pages to be shown. We always start with a Welcome page and end with an End page.
 page_sequence = [Welcome,
                 DemoPage,
-                Html_overview,
                 EndPage]

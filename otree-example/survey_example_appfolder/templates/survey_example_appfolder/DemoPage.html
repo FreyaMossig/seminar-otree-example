@@ -6,38 +6,46 @@
 {% endblock %}
 
 {% block content %}
-<br>
-<h2> Survey Example </h2>
-<hr>
-This is a demo page
+    <br>
+    <h2> Cats are awesome! </h2>
+    <hr>
+    This is a tribute to cats. Cats fulfill your life with joy, they are cuddly, soft and full of floof.
 
-<!-- This is the most basic way of implementing an input field -->
-{{ formfield "age_question"}}
+    <!-- This is the most basic way of implementing an input field -->
+    {{ formfield "number_cats_question" label="How many cats did you pet in your lifetime?"}}
 
-<!-- This is the most basic way of implementing error handling -->
-{{ formfield_errors 'age_question' }}
+    <!-- This is the most basic way of implementing error handling -->
+    {{ formfield_errors 'number_cats_question' }}
 
-<!-- This is a more advances way of implementing a question -->
-<!-- the type says what kind of input "field" you would like, the name has to 
-be the same as on models.py and the value is what will be displayed in your dataset
-if the option is clicked -->
+    <!-- This is a more advances way of implementing a question -->
+    <!-- the type says what kind of input "field" you would like, the name has to
+    be the same as on models.py and the value is what will be displayed in your dataset
+    if the option is clicked -->
 
-<p><b>Which gender do you identify with?</b></p>
-<input type="radio" name="gender" value="1" /> Male
-<br>
-<input type="radio" name="gender" value="2" /> Female
-<br>
-<input type="radio" name="gender" value="3" /> Divers
-<br>
-<input type="radio" name="gender" value="4" /> Prefer not to say
-<br>
-<br>
+    <p><b>What color do you find most beautiful in cats?</b></p>
+    <input type="radio" name="color" value="1"/> Black
+    <br>
+    <input type="radio" name="color" value="2"/> Red
+    <br>
+    <input type="radio" name="color" value="3"/> Brown
+    <br>
+    <input type="radio" name="color" value="4"/> Striped
+    <br>
+    <input type="radio" name="color" value="5"/> White
+    <br>
+    <input type="radio" name="color" value="6" /> Multiple colors
+    <br>
+    <input type="radio" name="color" value="7" /> Can't decide
+    <br>
+    <br>
 
-<!-- we can also have variables that are not displayed and work in the background -->
-<input type="hidden" name="hidden_input">
+    {{ formfield "best_cat_name_question" label="What is the best name to give to a cat?"}}
 
-<button class="otree-btn-next btn btn-primary next-button otree-next-button">
-    Next
-</button>
+    <!-- This is the most basic way of implementing error handling -->
+    {{ formfield_errors 'best_cat_name_question' }}
+
+    <button class="otree-btn-next btn btn-primary next-button otree-next-button">
+        Next
+    </button>
 
 {% endblock %}
